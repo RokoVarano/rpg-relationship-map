@@ -11,9 +11,9 @@ files:
 
 win:
   target:
-    - target: portable
+    - target: dir
       arch: [x64]
-  artifactName: '${productName}-portable.exe'
+  artifactName: '${productName}-windows-x64'
 
 linux:
   target:
