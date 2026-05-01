@@ -18,12 +18,13 @@ jobs:
         with:
           node-version: 18
 
-      - name: Clear npm cache and install dependencies
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies with pnpm
         run: |
-          npm cache clean --force
           Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue
-          Remove-Item -Force package-lock.json -ErrorAction SilentlyContinue
-          npm install
+          pnpm install --no-frozen-lockfile
 
       - name: Build Vite
         run: npm run build:vite
