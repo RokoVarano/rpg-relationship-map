@@ -1,0 +1,22 @@
+appId: com.rpg-relationships.app
+productName: Mapas de Relaciones RPG
+
+directories:
+  output: release
+
+files:
+  - dist/**/*
+  - src/main/**/*
+  - src/preload/**/*
+
+win:
+  target:
+    - target: portable
+      arch: [x64]
+  artifactName: '${productName}-portable.exe'
+
+linux:
+  target:
+    - target: dir
+      arch: [x64]
+  artifactName: '${productName}-linux-x64'
