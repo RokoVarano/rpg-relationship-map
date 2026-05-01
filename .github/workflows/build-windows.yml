@@ -18,11 +18,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies and rebuild native modules
-        run: |
-          Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue
-          npm install --force
-          npm rebuild
+      - name: Install dependencies
+        run: npm install
 
       - name: Build Vite
         run: npm run build:vite
