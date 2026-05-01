@@ -18,13 +18,11 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Install dependencies with pnpm
+      - name: Install dependencies and rebuild native modules
         run: |
           Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue
-          pnpm install --no-frozen-lockfile
+          npm install --force
+          npm rebuild
 
       - name: Build Vite
         run: npm run build:vite
